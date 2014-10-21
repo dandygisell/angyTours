@@ -100,8 +100,8 @@ busqueda pagos pendientes
     </table>
 	
 	<script src="../js/jquery-1.11.0.min.js"></script>
-    <script src="../js/bjqs-1.3.min.js"></script>	
-	<script src="../bootstrap311/js/bootstrap.min.js"></script>
+  <script src="../js/bjqs-1.3.min.js"></script>	
+	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/busqueda.js"></script>
 	<div id="grid" style="width:700px; height:455px;"></div>
 

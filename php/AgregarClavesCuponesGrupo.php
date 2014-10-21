@@ -46,7 +46,7 @@ $_SESSION['FolioAux'] = $folioGrupo;
 	<meta charset="UTF-8">
 	<title>Agregar Claves Grupo</title>
 
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
 	<link rel="stylesheet" href="../css/bordesT.css">
 

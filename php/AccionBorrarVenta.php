@@ -3,7 +3,6 @@ session_start();
 require_once 'Conexion.php';
 require_once 'Biblioteca.php';
 $conexion = conectarse();
-// $FolioGrupo = $_SESSION["auxFolioGrupo"];
 $cobrador = $_SESSION['id'];
 $log = $_SESSION['tipo'];
 if($_SESSION['logged'] == 'yes')
@@ -16,7 +15,7 @@ if($_SESSION['logged'] == 'yes')
 <title>Abono Grupo</title>
 
 <link rel="stylesheet" href="../css/bordesT.css">
-<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 	
 <link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
 

@@ -13,9 +13,7 @@ if(isset($_POST["nombre"]))
 	$estado = $_POST["estado"];
 
 	
-
-	// $concepto = $con.$fechaViaje.$cantidad;
-	$rutaservidor="imgcatalogo"; //aqui es el nombre de la carpeta donde se guardara la imgen
+	$rutaservidor="imgcatalogo"; //aqui es el nombre de la carpeta donde se guardará la imgen
 	$rutatemporal=$_FILES['imagen']['tmp_name'];//imagen es el name del formulario
 	$nombreimg=$_FILES['imagen']['name'];//recuperarmos nombre de imagen
 	$rutadestino="../".$rutaservidor.'/'.$nombreimg;//concatenamos la ruta donde estara la imagen

@@ -3,10 +3,6 @@ require_once 'Conexion.php';
 
 $conexion=conectarse();
 
-	
-
-
-
 switch ($_SERVER['REQUEST_METHOD']) {
 	
 	case 'GET':
@@ -26,7 +22,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
 				ORDER BY FechaEmicup DESC LIMIT 0, 30";
 			}
-					# code...
 					
 				$result=mysql_query($sql,$conexion);
 				$validar=mysql_num_rows($result);
@@ -37,28 +32,17 @@ switch ($_SERVER['REQUEST_METHOD']) {
 					$data[]=$row;
 						}
 					echo json_encode($data);
-					// echo $data;
-
-					# code...
 				} else {
 
 					$data[] = array("Folio"=>"",'Plan'=>"",'Fecha'=>"",'Clave'=>"",'Hotel'=>"No hay cupones diponibles",'Accion'=>"");
 
-
-					// $data["Plan"] = "0";
-					// $data["Fecha"] = "0";
-					// $data["Clave"] = "0";
-					// $data["Hotel"] = "0";
 					echo json_encode($data);
-					// echo $data;
-					# code...
 				}
 		break;
 
 		
 	
 	default:
-		# code...
 		break;
 }
 cerrar($conexion);

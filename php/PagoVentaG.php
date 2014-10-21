@@ -17,7 +17,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$IdUsuario = $datos['IdUsuario'];
 								$Descripcion = $datos['Descripcion'];
 								$CantidadTotal = $datos['CostoTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaViaje = $datos['FechaIn'];
@@ -42,7 +41,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 	<meta charset="UTF-8">
 	<title>Pago de Ventas Grupos</title>
 
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
 	<link rel="stylesheet" href="../css/bordesT.css">
 </head>
@@ -56,49 +55,48 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 </figure>
 
 <div id="informacion">
-<div id="datos">
+	<div id="datos">
 
-<div class="bg-warning bordes">
+		<div class="bg-warning bordes">
 
-<label for="">Cliente: </label><?php echo $nombre; ?><br>
-<label for="">Descripción: </label><?php echo $Descripcion; ?><br>
-<label for="">Cantidad : </label><?php echo $nombre; ?><br>
-<label for="">Estatus : </label><?php echo $estatus; ?><br>	
-<label for="">Fecha Entrada: </label><?php echo $FechaViaje; ?><br>	
-<label for="">Fecha Salida: </label><?php echo $FechaViaje2; ?><br>	
-</div><br>
+		<label for="">Cliente: </label><?php echo $nombre; ?><br>
+		<label for="">Descripción: </label><?php echo $Descripcion; ?><br>
+		<label for="">Cantidad : </label><?php echo $nombre; ?><br>
+		<label for="">Estatus : </label><?php echo $estatus; ?><br>	
+		<label for="">Fecha Entrada: </label><?php echo $FechaViaje; ?><br>	
+		<label for="">Fecha Salida: </label><?php echo $FechaViaje2; ?><br>	
+		</div><br>
 
-<div >
-	<button type="button" id="regresar"class="btn btn-success">Regresar</button>
-</div>
+		<div>
+			<button type="button" id="regresar"class="btn btn-success">Regresar</button>
+		</div>
 
-</div>
-
-<form action="ImprimirCuponPagoG.php" method="post" id="divDerecha" class="bg-warning bordes">
-
-<input type="text" hidden name="folioventa" value="<?php echo $FolioVta; ?>"><br>
-<!-- Total de la Venta : <input type="text" value> -->
-<label for="">Operadora: </label><input type="text" name="operadora" class="form-control" required><br>
-<input type="text" hidden id="concepto" name="concepto" value="<?php echo $Descripcion;?>"> 
-<label for="">Cantidad de pago: </label><input type="text" class="form-control" name="cantPago" readonly id="Cant" value="<?php echo $CantidadTotal; ?>"><br>
-<label for="">Comisión: </label><select name="comision" id="comision" class="form-control">
-	<option value=".10">10%</option>
-	<option value=".15">15%</option>
-	<option value=".16">16%</option>
-</select>
-
-<div class="derecha">
-	<input type="button" value="Calcular" id="Calcular" class="btn btn-info">
-</div>
-
-<label for="">Total: </label><input type="text" name="neto" id="neto" class="form-control" required><br>
-<label for="">Cantidad en Letras: </label><input type="text" name= "cantLetras" class="form-control" required><br>
-
-<div class="derecha">
-		<input class="btn btn-info" type="submit" value="Registrar Pago">
 	</div>
 
-</form>
+	<form action="ImprimirCuponPagoG.php" method="post" id="divDerecha" class="bg-warning bordes">
+
+		<input type="text" hidden name="folioventa" value="<?php echo $FolioVta; ?>"><br>
+		<label for="">Operadora: </label><input type="text" name="operadora" class="form-control" required><br>
+		<input type="text" hidden id="concepto" name="concepto" value="<?php echo $Descripcion;?>"> 
+		<label for="">Cantidad de pago: </label><input type="text" class="form-control" name="cantPago" readonly id="Cant" value="<?php echo $CantidadTotal; ?>"><br>
+		<label for="">Comisión: </label><select name="comision" id="comision" class="form-control">
+			<option value=".10">10%</option>
+			<option value=".15">15%</option>
+			<option value=".16">16%</option>
+		</select>
+
+		<div class="derecha">
+			<input type="button" value="Calcular" id="Calcular" class="btn btn-info">
+		</div>
+
+		<label for="">Total: </label><input type="text" name="neto" id="neto" class="form-control" required><br>
+		<label for="">Cantidad en Letras: </label><input type="text" name= "cantLetras" class="form-control" required><br>
+
+		<div class="derecha">
+			<input class="btn btn-info" type="submit" value="Registrar Pago">
+		</div>
+
+	</form>
 </div>
 
 <script src="../js/jquery-1.11.0.js"> </script>
@@ -106,46 +104,29 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 <script>
 	$(document).ready(function($) {
 	$("#Calcular").click(function(e) {
-		// alert('hola');
 
 		var cantidad =  $("#Cant").val();
 		var ciento = $("#comision").val();
 		var neto;
-
-		// alert(ciento);
-
-		
-		
+	
 		neto = (cantidad - (cantidad * ciento));
 
 		$("#neto").val(""+neto);
 
-		/* Act on the event */
 	});
 	$("#regresar").click(function(event) {
 
 		var log = $("#log").val();
 
 		$(location).attr('href','../Usuarios/'+log+'/DashBoard/DPpagosPendientes.php');
-		/* Act on the event */
 	});
 	
 });
 	
-</script>
-
-
-		
+</script>		
 </body>
 </html>
-
-
-
-
 <?php
-
-
-
 
 cerrar($Conexion);
  ?>

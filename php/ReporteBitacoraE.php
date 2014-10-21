@@ -15,9 +15,8 @@ $conexion = conectarse();
  	echo '<script language="javascript">alert("No hay datos para el reporte.");
 					window.location.href="javascript:history.back(1)";
 					</script>';
- 	# code...
+ 	
  } else {
- 	# code...
  
  
 class PDF extends FPDF

@@ -10,7 +10,6 @@ $sql = "SELECT *,`foliocatalogo` as id, `nombrehotel` AS value, `nombrehotel` AS
 				while ($row=mysql_fetch_assoc($result)) {
 
 					$data[]=$row;
-					# code...
 				}
 				echo json_encode($data);
 ?>

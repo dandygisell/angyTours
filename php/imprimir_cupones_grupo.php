@@ -16,8 +16,6 @@ $sql6 = "SELECT * FROM cuponesgrupo WHERE FolioCupon = '$FolioCupon'";
 						while ($datos6 = @mysql_fetch_assoc($resultado6) ){
 
 								$FolioGrupo = $datos6["FolioGrupo"];
-
-
 								$NumeroHab = $datos6["NumeroHab"];
 								$NombreTitular = $datos6["NombreTitular"];
 								$NombreA = $datos6["NombreA"];
@@ -40,7 +38,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$NombreGrupo = $datos['NombreGrupo'];
 								$Descripcion = $datos['Descripcion'];
 								$CostoTotal = $datos['CostoTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaCompra = $datos['FechaCompra'];
@@ -48,9 +45,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$OperadoraMay = $datos['OperadoraMay'];
 								$estatus = $datos['Estatus'];
 								$idhotel = $datos['IdHotel'];
-
-
-								// echo $idhotel;
 							}
 
 
@@ -79,8 +73,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 						while ($datos3 = @mysql_fetch_assoc($resultado3) ){
 
 								$nombreHotel = $datos3["nombrehotel"];
-
-								// echo $nombreotel;
 								
 							}
 
@@ -110,7 +102,6 @@ class PDF extends FPDF
 // Cabecera de página
 function Header()
 {
-	// <Logo></Logo>
 	$this->SetFont('Arial','B',12);
 	$this->SetY(6);
 	$this->Cell(30);
@@ -174,10 +165,6 @@ function ChapterBody($file)
 $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
 $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
  
-// echo utf8_decode($dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') );
-
-
-
 					$pdf = new PDF();
 					$pdf->AddPage();								
 					$pdf->SetY(35);
@@ -216,7 +203,6 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 					$pdf->MultiCell(160,10,utf8_decode("Observaciones : ").utf8_decode($Observaciones),1,'L');					
 					$pdf->SetX(20);
 					$pdf->Cell(160,14,utf8_decode("Le atendio : ").$nombreU,1,'C');
-					// $pdf->Cell(60,14,utf8_decode("Firma : "),1,2);
 					$pdf->SetY(225);
 
 					$pdf->SetX(20);
@@ -224,15 +210,7 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 
 
 					$pdf->MultiCell(160,3,utf8_decode($clasula),0,'J');
-
-
-					
-					// $pdf->Output();
-					
-
 					$pdf->Output('FolioG '.$FolioGrupo.' PAX'.$NombreTitular.'.pdf','D');
-					
 
-
- cerrar($conexion);
- ?>
+cerrar($conexion);
+?>

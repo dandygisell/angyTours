@@ -26,8 +26,6 @@ $headers = 'From: '.$_POST[email]."\r\n".
 echo '<script language="javascript">alert("`Su mensaje ha sido enviado con exito, Gracias");
 					window.location.href="../";
 					</script>';   
-// echo "El formulario se ha enviado con exito<br>";
-
 //PARA REDIRECCIONAR AL FORMULARIO DE NUEVO PUEDES USAR ESTAS DOS FORMAS:
 
 //echo "<a href='formulario.php'>REGRESAR >></a>";

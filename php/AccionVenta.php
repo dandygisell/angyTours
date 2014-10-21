@@ -5,8 +5,6 @@ require_once 'Biblioteca.php';
 $conexion = conectarse();
 $log = $_SESSION["tipo"];
 
-//Insertar
-
 if(isset($_POST["cliente"]))
 {
 	$cliente =$_POST["cliente"];

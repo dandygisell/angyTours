@@ -82,7 +82,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$IdUsuario = $datos['IdUsuario'];
 								$Descripcion = $datos['Descripcion'];
 								$CantidadTotal = $datos['CantidadTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaViaje = $datos['FechaViaje'];
@@ -91,7 +90,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 							}
 
 
-							$sql = "SELECT * FROM cliente WHERE idViajero = '$idViajero'";
+						$sql = "SELECT * FROM cliente WHERE idViajero = '$idViajero'";
 
 						$resultado= @mysql_query($sql) or die(mysql_error());
 
@@ -112,7 +111,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 
 
 					$pdf = new PDF();
-					// $pdf->AliasNbPages();
 					$pdf->AddPage();
 
 					$pdf->Image('../imagenes/logo.jpg',40,15,33);
@@ -129,7 +127,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					$pdf->Cell(60,5,'Correo: angeviajes@hotmail.com',0,2,'C');
 					$pdf->Cell(60,5,'RFC: PELA620129L36',0,2,'C');
 					$pdf->SetFont('Arial','',10);
-					// $pdf->setY
 					$pdf->SetY(35);
 					$pdf->SetX(140);
 					$pdf->Cell(40,8,utf8_decode("Fecha: ").utf8_decode($dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ),0,1);					
@@ -143,7 +140,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					$pdf->Cell(60,8,utf8_decode("Cantidad : ").$CantidadTotal,1,0,'L');
 					$pdf->Cell(50,8,utf8_decode("Abono : ").$cantidad,1,0,'L');
 					$pdf->Cell(50,8,utf8_decode("Saldo : ").$Saldo,1,1,'L');
-					// $pdf->MultiCell(100,8,utf8_decode("Importe Letras : ").$CantLetras,1,'L');					
 					$pdf->SetX(20);
 					
 					$pdf->MultiCell(160,6,utf8_decode("Descripción : ").utf8_decode($Descripcion),1,'J');					
@@ -160,7 +156,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					 $pdf->MultiCell(160,3,utf8_decode($clasula),0,'J');
 
 
-					///Segundo Cupon
+					///Segundo Cupón
 					 $pdf->SetY(50);
 
 					 // codigo de una sola pagina******************************************************************
@@ -191,16 +187,10 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					$pdf->Cell(60,8,utf8_decode("Cantidad : ").$CantidadTotal,1,0,'L');
 					$pdf->Cell(50,8,utf8_decode("Abono : ").$cantidad,1,0,'L');
 					$pdf->Cell(50,8,utf8_decode("Saldo : ").$Saldo,1,1,'L');
-					// $pdf->MultiCell(100,8,utf8_decode("Importe Letras : ").$CantLetras,1,'L');	
-					
-					// $pdf->Cell(40,8,utf8_decode("Fecha : ").$FechaCompra,1,0);
-					
 					$pdf->SetX(20);
 					$pdf->MultiCell(160,5,utf8_decode("Descripción : ").utf8_decode($Descripcion),1,'L');
    					 
 
-					// $pdf->Cell(160,28,utf8_decode("Descripción : ").$Descripcion,1,1,'L');
-					
 					$pdf->SetX(20);
 					$pdf->Cell(100,14,utf8_decode("Le atendio : ").utf8_decode($nombreU),1,0);
 					$pdf->Cell(60,14,utf8_decode("Firma : "),1,1);
@@ -211,8 +201,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 
 					 $pdf->SetFont('Arial','B',4);
 					 $pdf->MultiCell(160,3,utf8_decode($clasula),0,'J');
-					  // $pdf->Output();
-					
+										
 					// para gescargar la pagiina quitar los comentarios
 					$pdf->Output('abono '.$FolioVta.' cli '.$nombre.'.pdf','D'); 
 

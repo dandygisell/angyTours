@@ -22,8 +22,6 @@ if(isset($_POST["cliente"]))
     $IdUsuario =$_SESSION["id"];
     $idHotel = $_POST["idHotel"];
     $idViajero =$_POST["idViajero"];
-     // echo $IdUsuario;
-
 
 $qValidar = mysql_query("SELECT * FROM cliente WHERE Nombre = '$cliente'");
 
@@ -60,12 +58,11 @@ $qValidar = mysql_query("SELECT * FROM cliente WHERE Nombre = '$cliente'");
 					$id = trim($row[0]);
 					$_SESSION["FolioGrupo"] = $id;
 				}
-			// header("ReciboNuevaVenta.php");
+			
 
 			echo '<script language="javascript">alert("El grupo se ha creado satisfactoriamente");
 				window.location.href="ReciboNuevaGrupo.php";
 					</script>'; 
-		 // echo "Datos Agregados correctamente";
 		}
 		else 
 		{

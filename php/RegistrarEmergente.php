@@ -3,7 +3,6 @@ require_once 'Conexion.php';
 require_once 'Biblioteca.php';
 
 $conexion = conectarse();
-//Insertar
 
 if(isset($_POST["usuario"]))
 {

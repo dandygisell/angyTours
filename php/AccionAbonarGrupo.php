@@ -16,7 +16,7 @@ if($_SESSION['logged'] == 'yes')
 <title>Agregar Abono</title>
 <link rel="stylesheet" href="../css/bordesT.css">
 <link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
-<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body><?php

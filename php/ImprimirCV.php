@@ -62,7 +62,6 @@ class PDF extends FPDF
 // Cabecera de página
 function Header()
 {
-	// <Logo></Logo>
 	$this->SetFont('Arial','B',12);
 	$this->SetY(6);
 	$this->Cell(30);
@@ -126,10 +125,6 @@ function ChapterBody($file)
 $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
 $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
  
-// echo utf8_decode($dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') );
-
-
-
 					$pdf = new PDF();
 					$pdf->AddPage();								
 					$pdf->SetY(35);
@@ -169,7 +164,6 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 					$pdf->MultiCell(160,10,utf8_decode("Observaciones : ").utf8_decode($otras),1,'L');					
 					$pdf->SetX(20);
 					$pdf->Cell(160,14,utf8_decode("Le atendio : ").$atencion,1,'C');
-					// $pdf->Cell(60,14,utf8_decode("Firma : "),1,2);
 					$pdf->SetY(225);
 
 					$pdf->SetX(20);
@@ -178,10 +172,7 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 
 					$pdf->MultiCell(160,3,utf8_decode($clasula),0,'J');
 				
-					//$pdf->Output();
 					$pdf->Output('Venta:'.$foliovta.' Hotel:'.$nombreHotel.' Cliente:'.$Nombre.'.pdf','D');
 
-					  // $pdf->Output();
-				
- cerrar($conexion);
- ?>
+cerrar($conexion);
+?>

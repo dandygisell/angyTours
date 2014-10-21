@@ -73,7 +73,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$IdUsuario = $datos['IdUsuario'];
 								$Descripcion = $datos['Descripcion'];
 								$CantidadTotal = $datos['CantidadTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaViaje = $datos['FechaViaje'];
@@ -106,7 +105,6 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 
 
 					$pdf = new PDF();
-					// $pdf->AliasNbPages();
 					$pdf->AddPage();
 
 					$pdf->Image('../imagenes/logo.jpg',40,15,33);
@@ -123,7 +121,6 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 					$pdf->Cell(60,5,'Correo: angeviajes@hotmail.com',0,2,'C');
 					$pdf->Cell(60,5,'RFC: PELA620129L36',0,2,'C');
 					$pdf->SetFont('Arial','',10);
-					// $pdf->setY
 					$pdf->SetY(35);
 					$pdf->SetX(140);
 					$pdf->Cell(40,8,utf8_decode("Fecha: ").utf8_decode($dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ),0,1);
@@ -150,9 +147,7 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 					$pdf->MultiCell(160,3,utf8_decode($clasula),0,'J');
 
 
-					///Segundo Cupon
-					// $pdf->SetY(50);
-
+					///Segundo Cupón
 					 $pdf->AddPage();
 					 $pdf->Image('../imagenes/logo.jpg',40,15,33);
 					// Arial bold 15
@@ -168,7 +163,6 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 					$pdf->Cell(60,5,'Correo: angeviajes@hotmail.com',0,2,'C');
 					$pdf->Cell(60,5,'RFC: PELA620129L36',0,2,'C');
 					$pdf->SetFont('Arial','',10);
-					// $pdf->setY
 					$pdf->SetY(35);
 					$pdf->SetX(140);
 					$pdf->Cell(40,8,utf8_decode("Fecha: ").utf8_decode($dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ),0,1);

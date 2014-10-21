@@ -35,26 +35,15 @@ if (isset($_POST["folioventa"])) {
 	             	echo '<script language="javascript">alert("Se ha agregado el abono Satisfactoriamente");
 	             		window.location.href="CuponPagoImprimir.php";
 						</script>'; 
-						
-	             	# code...
-	             } else {
+				} else {
 
 	             	echo '<script language="javascript">alert("Ocurrio un error");
 						</script>'; 
-	             	# code...
-	             }
-	             
-
-
-	# code...
+	            }
 } else {
 
-	echo "No se ha recibido algun dato";
-	# code...
+	echo "No se ha recibido algún dato";
 }
-
-
-
 
 cerrar($Conexion);
 ?>

@@ -10,8 +10,6 @@ if(isset($_POST["concepto"]))
 	$FechaRetorno = $_POST["FechaRetorno"];
 	$totalVta = $_POST["total"];
 	$descripcion = $_POST["descripcion"];
-
-	// $concepto = $con.$fechaViaje.$cantidad;
 	$rutaservidor="imgvoucher"; //aqui es el nombre de la carpeta donde se guardara la imgen
 	$rutatemporal=$_FILES['voucher']['tmp_name'];//imagen es el name del formulario
 	$nombreimg=$_FILES['voucher']['name'];//recuperarmos nombre de imagen

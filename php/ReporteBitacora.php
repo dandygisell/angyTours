@@ -14,7 +14,6 @@ $conexion = conectarse();
  	echo '<script language="javascript">alert("No hay datos para el reporte.");
 					window.location.href="javascript:history.back(1)";
 					</script>';
- 	# code...
  } else {
 
 class PDF extends FPDF
@@ -140,16 +139,6 @@ function Footer()
 
 }
 
-	// $paciente= $_GET['id'];
-	// $con = new DB;
-	// $pacientes = $con->conectar();	
-	
-	// $strConsulta = "SELECT * from Cliente ";
-	
-	// $pacientes = mysql_query($conexion,$strConsulta);
-	
-	// $fila = mysql_fetch_array($pacientes);
-
 	$pdf=new PDF('L','mm','Letter');
 	$pdf->Open();
 	$pdf->AddPage();
@@ -161,13 +150,6 @@ function Footer()
 	$pdf->SetMargins(20,20,20);
 	$pdf->Ln(10);
 
- //    $pdf->SetFont('Arial','',12);
- //    $pdf->Cell(0,6,'Clave: '.$fila['idViajero'],0,1);
-	// $pdf->Cell(0,6,'Nombre: '.$fila['Nombre'].' '.$fila['Direccion'].' '.$fila['Telefono'],0,1);
-	// $pdf->Cell(0,6,'Sexo: '.$fila['Correo'],0,1); 
-	// $pdf->Cell(0,6,'Domicilio: '.$fila['Correo'],0,1); 
-	
-	// $pdf->Ln(10);
 	
 	$pdf->SetWidths(array(15, 60, 55, 50, 60));
 	$pdf->SetFont('Arial','B',10);
@@ -178,8 +160,7 @@ function Footer()
 			{
 				$pdf->Row(array('Folio', 'Cliente', 'Vendedor', 'Fecha de Compra','Importe de la Venta' ));
 			}
-	
-	// $strConsulta  = "SELECT * FROM venta WHERE (`EstatusP`= 'Cerrado') AND (`FechaCompra` BETWEEN '$fecha' AND '$fechaFinal')";
+
 	$strConsulta = "SELECT FolioVta as Folio, cantidadTotal as Importe,FechaCompra as Fecha,`usuarios`.`nombre` as Vendedor,`cliente`.`nombre` as Cliente FROM venta LEFT JOIN usuarios ON (`venta`.`idUsuario` = `usuarios`.`idUsuario`) left join cliente on (`venta`.`idViajero`=`cliente`.`idViajero`)
 		where EstatusP = 'Cerrado' AND (`FechaCompra` BETWEEN '$fecha' AND '$fechaFinal') ORDER BY FechaCompra DESC";
 	
@@ -212,11 +193,7 @@ function Footer()
 							}
 							$pdf->setX(200);
 							$pdf->Cell(60,8,utf8_decode("Total de ventas : ").$total,'LRB',0);
-
-								
-
-
-// $pdf->Output();
+							
 $pdf->Output('Reporte '.$fecha.' al '.$fechaFinal.'.pdf','D'); 
 }
 ?>

@@ -3,7 +3,6 @@ session_start();
 require_once 'Conexion.php';
 require_once 'Biblioteca.php';
 $conexion = conectarse();
-// $FolioGrupo = $_SESSION["auxFolioGrupo"];
 $cobrador = $_SESSION['id'];
 if($_SESSION['logged'] == 'yes')
 {
@@ -27,24 +26,17 @@ if($_SESSION['logged'] == 'yes')
 
 					echo '<script language="javascript">alert("El Grupo se ha Eliminado");
 							window.history.go(-2);
-							</script>'; 	
+							</script>';		
 		
-		# code...
 					} else {
 						echo mysql_error();
 
 
-						# code...
-					}
-
-		
-		
-		# code...
+						
+					}		
 	} else {
 		echo mysql_error();
-
-
-		# code...
+		
 	}
 	
 

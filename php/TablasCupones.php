@@ -22,31 +22,19 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
 
 
-		# code...
+		
 	} else {
-
-		// $nombret = $_POST["NombreT"];
-		// $nombrea = $_POST["NombreA"];
 
 		$menor1 = $_POST["Menor1"];
 		$menor2 = $_POST["Menor2"];
-		// $TipoHab = $_POST["TipoHab"];
-		// $obs = $_POST["Obs"];
-		// $numeroH=$_POST["numeroH"];
-		// $FolioGrupo=$_POST["FolioGrupo"];
 
 		$nombre = $menor1." / ".$menor2;
 
 	$sql = "INSERT INTO `cuponesgrupo` (`FolioCupon`, `FolioGrupoC`, `NumeroHab`, `NombreTitular`, `NombreA`, `Menores`, `Observaciones`, `TipoHab`,`cantAdultos`, `catMenores`, `EdadesMenores`) 
 	VALUES (NULL,'".$_POST["FolioGrupo"]."','".$_POST["numeroH"]."','".$_POST["NombreT"]."','".$_POST["NombreA"]."','$nombre','".$_POST["Obs"]."','".$_POST["TipoHab"]."','".$_POST["cantAdultos"]."','".$_POST["cantMenores"]."','".$_POST["EdadesMenores"]."')";
 	$resultado = mysql_query($sql) or die(mysql_error());
-		# code...
 	}
 	
-
-	
-		
-
 	break;
 
 	

@@ -9,8 +9,6 @@ require_once 'Biblioteca.php';
 require('../fpdf/fpdf.php');
 $conexion = conectarse();
 
-
-
 $clasula = "1.-El PRESENTE COMPROBANTE NO ES UN COMPROBANTE FISCAL.2.-ESTE COMPROBANTE NO ES PRESENTABLE ANTE EL PROVEEDOR DE SERVICIOS YA QUE NO ES UN CUPÓN DE SERVICIOS.
 ";
 
@@ -82,7 +80,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$IdUsuario = $datos['IdUsuario'];
 								$Descripcion = $datos['Descripcion'];
 								$CantidadTotal = $datos['CostoTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaViaje = $datos['FechaIn'];
@@ -112,7 +109,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 
 
 					$pdf = new PDF();
-					// $pdf->AliasNbPages();
 					$pdf->AddPage();
 
 					$pdf->Image('../imagenes/logo.jpg',40,15,33);
@@ -129,7 +125,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					$pdf->Cell(60,5,'Correo: angeviajes@hotmail.com',0,2,'C');
 					$pdf->Cell(60,5,'RFC: PELA620129L36',0,2,'C');
 					$pdf->SetFont('Arial','',10);
-					// $pdf->setY
 					$pdf->SetY(35);
 					$pdf->SetX(140);
 					$pdf->Cell(40,8,utf8_decode("Fecha: ").utf8_decode($dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ),0,1);					
@@ -141,7 +136,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					$pdf->Cell(60,8,utf8_decode("Cantidad : ").$CantidadTotal,1,0,'L');
 					$pdf->Cell(50,8,utf8_decode("Abono : ").$cantidad,1,0,'L');
 					$pdf->Cell(50,8,utf8_decode("Saldo : ").$Saldo,1,1,'L');
-					// $pdf->MultiCell(100,8,utf8_decode("Importe Letras : ").$CantLetras,1,'L');					
 					$pdf->SetX(20);
 					
 					$pdf->MultiCell(160,6,utf8_decode("Descripción : ").utf8_decode($Descripcion),1,'J');					
@@ -161,7 +155,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					///Segundo Cupon
 					 $pdf->SetY(50);
 
-					 // codigo de una sola pagina******************************************************************
+					 // codigo de una sola página******************************************************************
 					$pdf->SetY(204);
 					$pdf->Image('../imagenes/logo.jpg',40,140,32,24);
 					// Arial bold 15
@@ -188,16 +182,8 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					$pdf->Cell(60,8,utf8_decode("Cantidad : ").$CantidadTotal,1,0,'L');
 					$pdf->Cell(50,8,utf8_decode("Abono : ").$cantidad,1,0,'L');
 					$pdf->Cell(50,8,utf8_decode("Saldo : ").$Saldo,1,1,'L');
-					// $pdf->MultiCell(100,8,utf8_decode("Importe Letras : ").$CantLetras,1,'L');	
-					
-					// $pdf->Cell(40,8,utf8_decode("Fecha : ").$FechaCompra,1,0);
-					
 					$pdf->SetX(20);
 					$pdf->MultiCell(160,5,utf8_decode("Descripción : ").utf8_decode($Descripcion),1,'L');
-   					 
-
-					// $pdf->Cell(160,28,utf8_decode("Descripción : ").$Descripcion,1,1,'L');
-					
 					$pdf->SetX(20);
 					$pdf->Cell(100,14,utf8_decode("Le atendio : ").utf8_decode($nombreU),1,0);
 					$pdf->Cell(60,14,utf8_decode("Firma : "),1,1);
@@ -206,18 +192,12 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 					$pdf->SetY(225);
 					$pdf->SetX(20);
 
-					 $pdf->SetFont('Arial','B',4);
-					 $pdf->MultiCell(160,3,utf8_decode($clasula),0,'J');
-					  // $pdf->Output();
-					
-					// para gescargar la pagiina quitar los comentarios
+					$pdf->SetFont('Arial','B',4);
+					$pdf->MultiCell(160,3,utf8_decode($clasula),0,'J');
+					// para descargar la página quitar los comentarios
 					$pdf->Output('abono '.$FolioVta.' cli '.$nombre.'.pdf','D'); 
 
-					
-				
-
-
- cerrar($conexion);
- ?>
+cerrar($conexion);
+?>
 
 

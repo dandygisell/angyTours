@@ -10,28 +10,20 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
 	if (isset($_POST["Abono"])) {
 
-		$sql= "SELECT FolioVta as Folio, CantidadTotal as Importe,FechaCompra as Fecha, Estatus as Estatus,Saldo as Saldo FROM venta WHERE idViajero = '".$_POST["idViajero"]."' AND `Estatus`='Abierta' ";		
-
-		# code...
+		$sql= "SELECT FolioVta as Folio, CantidadTotal as Importe,FechaCompra as Fecha, Estatus as Estatus,Saldo as Saldo FROM venta WHERE idViajero = '".$_POST["idViajero"]."' AND `Estatus`='Abierta' ";
 	} 
 	if (isset($_POST["AbonoGrupo"])) {
 
 		$sql= "SELECT FolioGrupo as Folio, CostoTotal as Importe,FechaCompra as Fecha, Estatus as Estatus,Saldo as Saldo FROM ventagrupo WHERE idViajero = '".$_POST["idViajero"]."' AND `Estatus`='Abierta'";		
-
-		# code...
 	} 
 	if (isset($_POST["addCupon"])) {
 
 		$sql= "SELECT FolioGrupo as Folio, CostoTotal as Importe,FechaCompra as Fecha, Estatus as Estatus,Saldo as Saldo FROM ventagrupo WHERE idViajero = '".$_POST["idViajero"]."' AND `Estatus`='Cerrada'";	
-
-		# code...
 	} 
 	if (isset($_POST["busqueda_cupon"])) {
 
 		$sql= "SELECT FolioVta as Folio, CantidadTotal as Importe,FechaCompra as Fecha, Estatus as Estatus,Saldo as Saldo FROM venta WHERE idViajero = '".$_POST["idViajero"]."' AND `Estatus`='Cerrada'";		
-		# code...
 	}
-
 
 
 				$result=mysql_query($sql) or die(mysql_error());
@@ -52,14 +44,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
 					
 					echo json_encode($data);
 					
-				}	
-
-				
+				}			
 					
 		break;
 	
 	default:
-		# code...
 		break;
 }
 cerrar($conexion);

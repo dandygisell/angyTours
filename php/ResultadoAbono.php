@@ -4,7 +4,6 @@ require_once 'Conexion.php';
 require_once 'Biblioteca.php';
 $conexion = conectarse();
 $IdUsuario =$_SESSION["id"];
-//Insertar
 
 if(isset($_POST["cliente"]))
 {

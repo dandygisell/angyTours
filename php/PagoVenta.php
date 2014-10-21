@@ -16,7 +16,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$IdUsuario = $datos['IdUsuario'];
 								$Descripcion = $datos['Descripcion'];
 								$CantidadTotal = $datos['CantidadTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaViaje = $datos['FechaViaje'];
@@ -39,7 +38,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 	<meta charset="UTF-8">
 	<title>Pago de Ventas</title>
 
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
 	<link rel="stylesheet" href="../css/bordesT.css">
 </head>
@@ -68,7 +67,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 <form action="ImprimirCuponPago.php" method="post" id="divDerecha" class="bg-warning bordes">
 
 	<input type="text" hidden name="folioventa" value="<?php echo $FolioVta; ?>"><br>
-	<!-- Total de la Venta : <input type="text" value> -->
 	<label for="">Operadora: </label><input type="text" name="operadora" class="form-control" required><br>
 	<input type="text" hidden id="concepto" name="concepto"value="<?php echo $Descripcion;?>"> 
 	<label for="">Cantidad de pago:</label><input class="form-control" type="text" name="cantPago" readonly id="Cant" value="<?php echo $CantidadTotal; ?>"><br>
@@ -97,36 +95,26 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 <script>
 	$(document).ready(function($) {
 	$("#Calcular").click(function(e) {
-		// alert('hola');
 
 		var cantidad =  $("#Cant").val();
 		var ciento = $("#comision").val();
 		var neto;
 
-		// alert(ciento);
-
-		
-		
 		neto = (cantidad - (cantidad * ciento));
 
 		$("#neto").val(""+neto);
 
-		/* Act on the event */
 	});
 	$("#regresar").click(function(event) {
 
 		var log = $("#log").val();
 
 		$(location).attr('href','../Usuarios/'+log+'/DashBoard/DPpagosPendientes.php');
-		/* Act on the event */
 	});
 	
 });
 	
 </script>
-
-
-		
 </body>
 </html><?php
 cerrar($Conexion);

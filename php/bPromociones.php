@@ -24,7 +24,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
 		break;
 	
 	default:
-		# code...
 		break;
 }
 cerrar($conexion);

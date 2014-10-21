@@ -19,7 +19,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$NombreGrupo = $datos['NombreGrupo'];
 								$Descripcion = $datos['Descripcion'];
 								$CostoTotal = $datos['CostoTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaCompra = $datos['FechaCompra'];
@@ -57,7 +56,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 	<title>Recibo Nuevo Grupo</title>
 	<link rel="stylesheet" href="../css/ReciboVenta.css">
 	<link rel="stylesheet" href="../css/bordesT.css">
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 	<link rel="shortcut icon" href="imagenes\iconoAngy.ico" />	
 </head>

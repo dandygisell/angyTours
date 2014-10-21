@@ -58,7 +58,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$NombreGrupo = $datos['NombreGrupo'];
 								$Descripcion = $datos['Descripcion'];
 								$CostoTotal = $datos['CostoTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaCompra = $datos['FechaCompra'];
@@ -91,7 +90,6 @@ $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado
 $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 
 					$pdf = new PDF();
-					// $pdf->AliasNbPages();
 					$pdf->AddPage();
 					$pdf->Image('../imagenes/logo.jpg',40,8,33);
 					// Arial bold 15
@@ -125,10 +123,6 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 
 
 					///Segundo Cupon
-					// $pdf->SetY(50);
-
-					// $pdf->AddPage();
-					// $pdf->SetY(204);
 					$pdf->Image('../imagenes/logo.jpg',40,140,32,24);
 					// Arial bold 15
 					$pdf->SetFont('Arial','B',8);
@@ -155,60 +149,15 @@ $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"
 					$pdf->Cell(60,8,utf8_decode("Cantidad : ").$CostoTotal,1,0,'L');
 					$pdf->MultiCell(100,8,utf8_decode("Importe Letras : ").$CantLetras,1,'L');	
 					
-					// $pdf->Cell(40,8,utf8_decode("Fecha : ").$FechaCompra,1,0);
-					
 					$pdf->SetX(20);
 					$pdf->MultiCell(160,5,utf8_decode("Descripción : ").utf8_decode($Descripcion),1,'L');
    					 
-
-					// $pdf->Cell(160,28,utf8_decode("Descripción : ").$Descripcion,1,1,'L');
-					
 					$pdf->SetX(20);
 					$pdf->Cell(100,14,utf8_decode("Le atendio : ").utf8_decode($nombreU),1,0);
 					$pdf->Cell(60,14,utf8_decode("Firma : "),1,1);
-					// $pdf->Output();
 					
 
 					$pdf->Output('Recibo'.$nombre.'Folio'.$FolioGrupo.'.pdf','D');
-					// echo "<a href="javascript:window.print()">Imprimir esta página</a> ";
-
-					// Parte de arriba fehca de emision y clave de confirmacion
-					// $pdf->Cell(110,10,utf8_decode("Fecha de Emisión: ").$FdeE,2,0,'L',true);
-					// $pdf->Cell(80,10,utf8_decode("Clave de Confirmación : ").$clave,2,1,'L',true);
-					// $pdf->setY(80);
-
-					// $pdf->Cell(150,10,"Hotel :".$matricula.utf8_decode("                                     Dirección : ").$nombre,2,2,'L');
-					// $pdf->Cell(80,10,utf8_decode("Dirección : ").$nombre.utf8_decode("                 Teléfono:").$paterno,2,2,'L');
-					// // $pdf->Cell(80,10,"Telefono: ".$paterno,1,1,'L');
-
-					// $pdf->Cell(80,10,"Titular :".$Titular."                                                            2do Pasajero :".$acompanante,2,1,'L');
-					// // $pdf->Cell(80,10,"2do Pasajero :".$acompanante,2,1,'L');
-					// $pdf->Cell(80,10,"Adultos :".$adultos."      Menores :".$menores,2,1,'L');
-					// // $pdf->Cell(80,10,"Menores :".$menores,2,1,'L');
-					// $pdf->Cell(180,10,"Fecha de Llegada : ".$fechaLLegada."                                        Check Inn: ".$tiempoINN,2,1,'L',true);
-					// // $pdf->Cell(80,10,"Check Inn: ".$tiempoINN,2,1,'L');
-					// $pdf->Cell(180,10,"Fecha de Salida : ".$fechaSalida."                                          Check Out :".$tiempoOUT,2,1,'L',true);
-					// // $pdf->Cell(80,10,"Check Out :".$tiempoOUT,2,1,'L');
-
-
-					// $pdf->Cell(80,10,"Plan : ".$plan,2,1,'L');
-
-					// // Datos de la operadora y observaciones
-					// $pdf->Cell(80,10,"Operadora Mayorista: ".$opm."                                     Reserva confirmada por: ".$ResConP,2,1,'L');
-					// // $pdf->Cell(80,10,"Reserva confirmada por: ".$ResConP,2,1,'L');
-					// // $pdf->Cell(80,10,"A la Atencion de : ".$atencion,2,1,'L');
-					// // $pdf->Cell(80,10,"Fecha de Emision: ".$FdeE,2,1,'L');
-					// // $pdf->Cell(80,10,"Clave de Confirmacion : ".$clave,2,1,'L');
-					// $pdf->Cell(80,10,"Observaciones: ".$otras,2,1,'L');
-
-					
-
-					
-					// echo '<script language="javascript">alert("El usuario se ha registrado correctamente");
-					// window.location.href="../Html/Tinicio.html";
-					// </script>'; 
-				
-
 
  cerrar($conexion);
  ?>

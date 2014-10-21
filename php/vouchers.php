@@ -2,9 +2,6 @@
 require_once 'Conexion.php';
 require_once 'Biblioteca.php';
 $conexion = conectarse();
-
-	// $nombre = $_POST["nombre"];
-
 	@$folio = $_GET['folio'];
 
 	$sql = "SELECT * FROM `voucher` WHERE `folioVoucher` = $folio";
@@ -21,8 +18,7 @@ while ($datos = @mysql_fetch_assoc($resultado) )
 	
 }
 
- ?>		
-
+ ?>	
 			 <label><strong>Concepto : </strong></label><?php echo $concepto; ?> <br>
 			 <label><strong>Fecha de salida : </strong> </label><?php echo $FechaSalida; ?> <br>
 			 <label><strong>Fecha de retorno : </strong></label><?php echo $FechaRetorno; ?> <br>

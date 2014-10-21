@@ -14,8 +14,6 @@ $aux = "SELECT * FROM cliente WHERE NombreIDViajero = '$id'";
 
 
 $tabla=consultaArray($aux, $conexion);
-
-// echo $sql;
 foreach($tabla as $renglon)
 {	
 	$nombre=$renglon["Nombre"];
@@ -32,11 +30,8 @@ foreach($tabla as $renglon)
 	$_SESSION['tipo'] = $tipo;
 	$_SESSION['usuario']=$usuario;
 	$_SESSION['id']=$idViajero;
-	// echo '<script language="javascript">alert("Logueado como Viajero");
-	// 						window.location.href="../index.html";
-	// 						</script>'; 
+
 	echo '<script>window.location="../Usuarios/Viajero/TViajero.php"</script>';
-	// 
 	} 
 	 else {
 					$sql="SELECT * FROM usuarios WHERE  NombreIdUsuario ='$id' AND contrasena='$pass'" ; 
@@ -47,8 +42,6 @@ foreach($tabla as $renglon)
 
 
 					$tabla=consultaArray($aux, $conexion);
-
-					// echo $sql;
 
 					foreach($tabla as $renglon)
 					{	
@@ -69,19 +62,15 @@ foreach($tabla as $renglon)
 						$_SESSION['id']=$idUsuario;
 
 						if ($tipo == "Agente") {
-							# code...
 							echo '<script>window.location="../Usuarios/Agente/DashBoard/DVentas.php"</script>';
 						} else {
-							# code...
 							echo '<script>window.location="../Usuarios/Gerente/DashBoard/DVentas.php"</script>';
 						}
 						
 
 						echo '<script language="javascript">alert("Logueado como Gerente o Aventas");
 							window.location.href="../index.html";
-							</script>'; 
-						// echo '<script>window.location="../PHP/ViajeroPHP/IViajero.php"</script>';
-						// // 
+							</script>';
 						} 
 						else {
 						

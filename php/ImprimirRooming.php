@@ -16,7 +16,6 @@ $FolioGrupo = $_GET["FolioGrupo"];
  	echo '<script language="javascript">alert("No hay datos para el reporte.");
 					window.location.href="javascript:history.back(1)";
 					</script>';
- 	# code...
  } else {
 
  while ($datos = @mysql_fetch_assoc($validar) ){
@@ -28,7 +27,6 @@ $FolioGrupo = $_GET["FolioGrupo"];
 								$NombreGrupo = $datos['NombreGrupo'];
 								$Descripcion = $datos['Descripcion'];
 								$CostoTotal = $datos['CostoTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaCompra = $datos['FechaCompra'];
@@ -46,7 +44,6 @@ $FolioGrupo = $_GET["FolioGrupo"];
 
 								$nombreHotel = $datos3["nombrehotel"];
 
-								// echo $nombreotel;
 								
 							}
 
@@ -171,18 +168,6 @@ function Footer()
 }
 
 }
-
-	// $paciente= $_GET['id'];
-	// $con = new DB;
-	// $pacientes = $con->conectar();	
-	
-	// $strConsulta = "SELECT * from Cliente ";
-	
-	// $pacientes = mysql_query($conexion,$strConsulta);
-	
-	// $fila = mysql_fetch_array($pacientes);
-
-	// $pdf=new PDF('L','mm','Letter');
 $pdf=new PDF("L");
 	$pdf->Open();
 	$pdf->AddPage();
@@ -195,14 +180,6 @@ $pdf=new PDF("L");
 	$pdf->Ln(10);
 	$pdf->setX(8);
 
- //    $pdf->SetFont('Arial','',12);
- //    $pdf->Cell(0,6,'Clave: '.$fila['idViajero'],0,1);
-	// $pdf->Cell(0,6,'Nombre: '.$fila['Nombre'].' '.$fila['Direccion'].' '.$fila['Telefono'],0,1);
-	// $pdf->Cell(0,6,'Sexo: '.$fila['Correo'],0,1); 
-	// $pdf->Cell(0,6,'Domicilio: '.$fila['Correo'],0,1); 
-	
-	// $pdf->Ln(10);
-	
 	$pdf->SetWidths(array(8, 80, 15, 20, 20,15, 75, 50));
 	$pdf->SetFont('Arial','B',8);
 	$pdf->SetFillColor(85,107,47);
@@ -214,7 +191,6 @@ $pdf=new PDF("L");
 				$pdf->Row(array('Hab', 'Pasajeros','TipoHab','Entrada','Salida','Adultos','Menores','Observaciones',));
 			}
 	
-	// $strConsulta  = "SELECT * FROM venta WHERE (`EstatusP`= 'Cerrado') AND (`FechaCompra` BETWEEN '$fecha' AND '$fechaFinal')";
 	$strConsulta = "SELECT 
 	NumeroHab as Hab,
 	 NombreTitular as Pasajeros,
@@ -267,18 +243,8 @@ $pdf=new PDF("L");
 				   ));
 			}
 		}
-		// $sql = "SELECT SUM(CostoTotal) AS Ventas FROM ventagrupo WHERE (`EstatusP`= 'Cerrado') AND (`FechaCompra` BETWEEN '$fecha' AND '$fechaFinal')";
-		// $resultado = mysql_query($sql);		
-		// while ($datos = @mysql_fetch_assoc($resultado) ){
-
-		// 						$total = $datos['Ventas'];
-		// 					}
-		// 	$pdf->setX(200);
-		// 					$pdf->Cell(60,8,utf8_decode("Total de ventas : ").$total,'LRB',0);								
-
-
-// $pdf->Output();
-					$pdf->Output('Rooming List '.utf8_decode($NombreGrupo).'pdf','D'); 
+		
+			$pdf->Output('Rooming List '.utf8_decode($NombreGrupo).'pdf','D'); 
 
 }
 ?>

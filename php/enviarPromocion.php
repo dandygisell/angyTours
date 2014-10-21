@@ -12,8 +12,6 @@ if(isset($_POST["nombre"]))
 	$precio = $_POST["precio"];
 	$descripcion = $_POST["descripcion"];
 	$btnpaypal = $_POST["btnpaypal"];
-
-	// $concepto = $con.$fechaViaje.$cantidad;
 	$rutaservidor="imgpromo"; //aqui es el nombre de la carpeta donde se guardara la imgen
 	$rutatemporal=$_FILES['imagen']['tmp_name'];//imagen es el name del formulario
 	$nombreimg=$_FILES['imagen']['name'];//recuperarmos nombre de imagen

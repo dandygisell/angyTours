@@ -15,8 +15,6 @@ $resultado = mysql_query($sql) or die(mysql_error());
 $validar = mysql_num_rows($resultado);
 
 if ($validar != 0) {
-	# code...
-
 
 
 ?>
@@ -26,7 +24,7 @@ if ($validar != 0) {
 	<meta charset="UTF-8">
 	<title>Imprimir Cupón Grupo</title>
 	<link rel="stylesheet" href="../css/bordesT.css">
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="../css/kendo.common.min.css">
 	<link rel="stylesheet" href="../css/kendo.default.min.css">
@@ -78,11 +76,8 @@ while ($datos = @mysql_fetch_assoc($resultado) ){
 
 	echo "<button><a href=\"ImprimirCGT.php?folio=".$FolioCupon."\" >Descargar Todos</a></button>" ;
 
-	# code...
-
 } else {
 	echo "EL gurpo no tiene Pasajeros";
-	# code...
 }
 ?>
 

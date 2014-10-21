@@ -13,7 +13,7 @@ if($_SESSION['logged'] == 'yes')
 	<title>Cupón de Venta</title>
 
 	<link rel="stylesheet" href="../css/ECupon.css">
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.4.css">
 
@@ -175,7 +175,6 @@ if($_SESSION['logged'] == 'yes')
 				<?php
 				echo "<button class='btn btn-warning' align=\"center\"><a style='color:white; text-decoration:none;' href=\"../Usuarios/".$log."/DashBoard/DVCupones.php\">Regresar</a></button>";
 				?>
-				<!-- <button class="btn btn-success"><a href="CuponAbono.php?folio=<?php echo $FolioVta ?>" target="_blank">Imprimir Cupón</a></button> -->
 				<input type="button" class="btn btn-success" name="Enviar" id="boton1" value="Generar Cupón" align="center" target="_blank">
 				</div>
 				<div id="msg" style="display:none;"></div>
@@ -189,7 +188,6 @@ if($_SESSION['logged'] == 'yes')
 					<?php
 				echo "<button class='btn btn-warning' align=\"center\"><a style='color:white; text-decoration:none;' href=\"../Usuarios/".$log."/DashBoard/DVCupones.php\">Regresar</a></button>";
 				?>
-				<!-- <button class="btn btn-success"><a href="CuponAbono.php?folio=<?php echo $FolioVta ?>" target="_blank">Imprimir Cupón</a></button> -->
 				<input type="button" class="btn btn-success" name="Enviar" id="boton2" value="Generar Cupón" align="center" target="_blank">
 				
 				</div>

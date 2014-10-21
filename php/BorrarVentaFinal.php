@@ -3,7 +3,6 @@ session_start();
 require_once 'Conexion.php';
 require_once 'Biblioteca.php';
 $conexion = conectarse();
-// $FolioGrupo = $_SESSION["auxFolioGrupo"];
 $cobrador = $_SESSION['id'];
 $log = $_SESSION['tipo'];
 if($_SESSION['logged'] == 'yes')
@@ -33,33 +32,15 @@ if($_SESSION['logged'] == 'yes')
 
 			} else {
 						echo mysql_error();
-
-
-						# code...
 					}
 
-
-
-			
-
-					
-		
-		# code...
 					} else {
 						echo mysql_error();
 
-
-						# code...
 					}
-
-		
-		
-		# code...
 	} else {
 		echo mysql_error();
 
-
-		# code...
 	}
 	
 

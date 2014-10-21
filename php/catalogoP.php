@@ -6,8 +6,6 @@ $conexion = conectarse();
 
 $log = $_SESSION["tipo"];
 
-	// $nombre = $_POST["nombre"];
-
 	@$folio = $_GET['folio'];
 
 	$sql = "SELECT * FROM `promociones` WHERE `foliopromo` = $folio";
@@ -20,9 +18,7 @@ while ($datos = @mysql_fetch_assoc($resultado) )
 	$fechafinalp = $datos["fechafinalp"];
 	$precio = $datos["precio"];
 	$descripcion = $datos["descripcion"];
-	$ruta = $datos['imagen'];
-  // $ruta = $datos['nombre'];
-  //ahora solamente debemos mostrar la imagen	
+	$ruta = $datos['imagen'];	
 }
 
  ?>
@@ -32,7 +28,7 @@ while ($datos = @mysql_fetch_assoc($resultado) )
  	<meta charset="UTF-8">
  	<title>Información de la Promoción</title>
  	<link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/bordesT.css">
 
 	<script src="../js/jquery-2.0.2.min.js"></script>

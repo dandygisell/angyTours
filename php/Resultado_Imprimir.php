@@ -1,6 +1,5 @@
 <?php 
 session_start();
-//$usuario = $_SESSION["user"];
 require_once'Conexion.php';
 $Conexion = conectarse();
 $usuario = $_SESSION["id"];
@@ -14,7 +13,7 @@ $log = $_SESSION["tipo"];
 	<title>Imprimir Cupon de Pago</title>
 	<link rel="stylesheet" href="../css/bordesT.css">
 	<link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div id="agregar" class="alert alert-success">

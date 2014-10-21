@@ -17,7 +17,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$IdUsuario = $datos['IdUsuario'];
 								$Descripcion = $datos['Descripcion'];
 								$CantidadTotal = $datos['CantidadTotal'];
-								// $CantidadVariable = $datos['CantidadVariable'];
 								$CantLetras = $datos['CantLetras'];
 								$Saldo = $datos['Saldo'];
 								$FechaViaje = $datos['FechaViaje'];
@@ -25,7 +24,6 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 								$estatus = $datos['Estatus'];
 							}
 
-							// echo $Descripcion;
 							$sql = "SELECT * FROM cliente WHERE idViajero = '$idViajero'";
 
 							$resultado= @mysql_query($sql) or die(mysql_error());
@@ -54,7 +52,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 	<title>Recibo Nueva Venta</title>
 	<link rel="stylesheet" href="../css/ReciboVenta.css">
 	<link rel="stylesheet" href="../css/bordesT.css">
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 	<link rel="shortcut icon" href="imagenes\iconoAngy.ico" />
 

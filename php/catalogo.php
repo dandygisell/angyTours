@@ -6,8 +6,6 @@ $conexion = conectarse();
 
 $log = $_SESSION["tipo"];
 
-	// $nombre = $_POST["nombre"];
-
 	@$folio = $_GET['folio'];
 
 	$sql1 = "SELECT * FROM `catalogo1` WHERE `foliocatalogo` = $folio";
@@ -49,7 +47,7 @@ while ($datos = @mysql_fetch_assoc($resultado4) )
  	<meta charset="UTF-8">
  	<title>Información del Hotel</title>
  	<link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/bordesT.css">
 
 	<script src="../js/jquery-2.0.2.min.js"></script>

@@ -11,12 +11,11 @@ if($_SESSION['logged'] == 'yes')
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Borrar Grupo</title>
+	<link rel="stylesheet" href="../jquery-ui-1.10.4.custom/css/smoothness/jquery-ui-1.10.4.custom.css">
+	
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
-	<link href="css/jqueryui.css" type="text/css" rel="stylesheet"/>
-	<!-- <link rel="stylesheet" href="../css/busqueda.css"> -->
-	<link rel="stylesheet" href="../jquery-ui-1.10.4.custom/css/smoothness/jquery-ui-1.10.4.custom.css">
 
 	<script type="text/javascript">
 	$(function (){

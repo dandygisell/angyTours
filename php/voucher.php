@@ -16,7 +16,7 @@ $conexion = conectarse();
 	
 	<link rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.4.css">
 
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/kendo.common.min.css">
   	<link rel="stylesheet" href="../css/kendo.default.min.css">
 
@@ -45,35 +45,35 @@ $conexion = conectarse();
 
 		<form action="enviarVoucher.php" method="POST" autocomplete="on" class="form-horizontal" role="form" enctype="multipart/form-data"> 
 	                                                         
-	                        <label for="concepto">Concepto de Venta:</label>
-	                        <select name="concepto" id="concepto" class="form-control" required>
+	        <label for="concepto">Concepto de Venta:</label>
+	        <select name="concepto" id="concepto" class="form-control" required>
 
-                              <option value="reservacion">Reservación</option>
-                              <option value="transporte">Transporte</option>
-                              <option value="reserYTrans">Ambos</option>
+	            <option value="reservacion">Reservación</option>
+	            <option value="transporte">Transporte</option>
+	            <option value="reserYTrans">Ambos</option>
 
-                            </select>	                        
-	                        <label for="">Fecha de Salida: </label>
-                     		<input type="text" id="fecha" name="FechaSalida" class="form-control">
-                        	<label for="">Fecha de Retorno: </label>
-                          	<input type="text" id="fechaFinal" name="FechaRetorno" class="form-control">
+            </select>	                        
+	        <label for="">Fecha de Salida: </label>
+            <input type="text" id="fecha" name="FechaSalida" class="form-control">
+            <label for="">Fecha de Retorno: </label>
+            <input type="text" id="fechaFinal" name="FechaRetorno" class="form-control">
 
-                          	<label for="">Total de la Venta:</label>
-                          	<input id="currency" class="form-control" type="number" value="0" min="0" max="1000000" name="total" required/><br>
+            <label for="">Total de la Venta:</label>
+            <input id="currency" class="form-control" type="number" value="0" min="0" max="1000000" name="total" required/><br>
 
-                          	<label for="">Descripción:</label>
-                          	<textarea name="descripcion" id="texto" class="form-control" cols="60" rows="5"></textarea>
+            <label for="">Descripción:</label>
+            <textarea name="descripcion" id="texto" class="form-control" cols="60" rows="5"></textarea>
 	                        
-	                        <label for="">Subir imagen del voucher: </label>
-	                        <input type= "FILE" name="voucher"/><br>
+	        <label for="">Subir imagen del voucher: </label>
+	        <input type= "FILE" name="voucher"/><br>
 
-	                        <div class="derecha">
-					    		<input type= "submit" class="btn btn-info" value="Subir"/>
-					    		<input type= "button" class="btn btn-warning" id="btn_regresar"value="Regresar"/>		    		 
+	        <div class="derecha">
+				<input type= "submit" class="btn btn-info" value="Subir"/>
+				<input type= "button" class="btn btn-warning" id="btn_regresar"value="Regresar"/>		    		 
 					    		
-					        </div>
+			</div>
 			                                
-	                    </form>
+	        </form>
 		</div>
 	</section>	
 </body>

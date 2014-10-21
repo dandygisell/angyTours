@@ -13,7 +13,7 @@ $log = $_SESSION["tipo"];
 	<title>Modificar Hoteles</title>
 
 	<link rel="shortcut icon" href="../imagenes/iconoAngy.ico" />
-	<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/bordesT.css">
 
 	<script src="../js/jquery-2.0.2.min.js"></script>

@@ -6,9 +6,6 @@ $conexion=conectarse();
 	$fecha = $_POST["fecha"];
 	$fechaFinal = $_POST["fechaFinal"];
 
-
-
-
 switch ($_SERVER['REQUEST_METHOD']) {
 	
 	case 'POST':
@@ -24,22 +21,14 @@ switch ($_SERVER['REQUEST_METHOD']) {
 		if ($r2 != 0){
 
 			$sql = "SELECT SUM(CantidadTotal) AS Ventas FROM venta WHERE (`EstatusP`= 'Cerrado') AND (`FechaCompra` BETWEEN '$fecha' AND '$fechaFinal')";
-			# code...
 		} else {
 
 
 			$data[] = array('Ventas' =>"No hay datos para la cunsulta" , );
 			echo json_encode($data);
 
-
-			// echo "No hay resultados para la Cusulta";
 			break;
-			# code...
 		}
-		
-
-	
-		# code...
 	}	
 
 	if (isset($_POST["calcularG"])) {
@@ -50,16 +39,16 @@ switch ($_SERVER['REQUEST_METHOD']) {
 		if ($r2 != 0){
 
 		$sql = "SELECT SUM(CostoTotal) AS Ventas FROM ventagrupo WHERE (`EstatusP`= 'Cerrado') AND (`FechaCompra` BETWEEN '$fecha' AND '$fechaFinal')";
-			# code...
+			
 		} else {
 
 			$data[] = array('Ventas' =>"No hay datos para la cunsulta" , );
 			echo json_encode($data);
 			break;
-			# code...
+			
 		}
 
-		# code...
+		
 	}
 	if (isset($_POST["calcularE"])) {
 
@@ -69,16 +58,14 @@ switch ($_SERVER['REQUEST_METHOD']) {
 		if ($r2 != 0){
 
 	$sql = "SELECT SUM(neto) AS Ventas FROM pagov WHERE `FechaExpedicion` BETWEEN '$fecha' AND '$fechaFinal'";
-			# code...
+			
 		} else {
 
 			$data[] = array('Ventas' =>"No hay datos para la cunsulta" , );
 			echo json_encode($data);
 			break;
-			# code...
+			
 		}
-
-		# code...
 	}
 
 				$result=mysql_query($sql);
@@ -100,7 +87,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
 		break;
 	
 	default:
-		# code...
 		break;
 }
 cerrar($conexion);

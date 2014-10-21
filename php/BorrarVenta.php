@@ -14,8 +14,7 @@ if($_SESSION['logged'] == 'yes')
 	<title>Document</title>
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
-	<link href="css/jqueryui.css" type="text/css" rel="stylesheet"/>
-	<!-- <link rel="stylesheet" href="../css/busqueda.css"> -->
+	
 	<link rel="stylesheet" href="../jquery-ui-1.10.4.custom/css/smoothness/jquery-ui-1.10.4.custom.css">
 
 	<script type="text/javascript">
@@ -39,10 +38,8 @@ if($_SESSION['logged'] == 'yes')
 	});
 	</script>
 </head>
-<body>
-		
-				
-				<form action="" method="post"> 
+<body>				
+	<form action="" method="post"> 
 
 		<label for="numeroFolio">Numero de Folio </label><input type="text" name="numeroFolio">
 		<label for="nombrePax">Nombre del Titular de la Venta </label> <input type="text" name="cliente" id="cliente"><br>
@@ -52,7 +49,7 @@ if($_SESSION['logged'] == 'yes')
 		<input type="submit" value="buscar">
 		<a href="../usuarios/Gerente/Gerente.php">regresar al menu</a>
 
-		</form>
+	</form>
 
 		<div id="resultados" align="center">
 
@@ -72,9 +69,7 @@ $resultado= @mysql_query($sql) or die(mysql_error());
 
 		if (consultaSQL($sql,$conexion))
 		{			
-			// $tabla = consultaArray ($sql,$conexion);
 			echo "Historial de Compras";
-			// echo recorrerTabla($tabla);	
 					$tabla = consultaArray ($sql,$conexion);
 					$tablaborrable = array();
 					$nuevoRenglon = array();

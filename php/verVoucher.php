@@ -33,16 +33,5 @@ switch ($_SERVER['REQUEST_METHOD'])
 
 		break;
 }
-/*$resultado= @mysql_query($sql) or die(mysql_error());
-
-while ($datos = @mysql_fetch_assoc($resultado) )
-{
-	$folio = $datos['folioVoucher'];
-	$nombre = $datos['nombre'];
-
-  	echo "<a href=\"vouchers.php?folio=".$folio."\">$nombre</a><br>";
-
-}
-*/
 cerrar($conexion);
 ?>

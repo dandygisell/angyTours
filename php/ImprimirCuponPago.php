@@ -1,6 +1,5 @@
 <?php 
 session_start();
-//$usuario = $_SESSION["user"];
 require_once'Conexion.php';
 $Conexion = conectarse();
 $usuario = $_SESSION["id"];
@@ -27,11 +26,7 @@ if (isset($_POST["folioventa"])) {
 
 	echo '<script language="javascript">alert("La venta ya ha sido pagada");             		
 	             		window.history.go(-1);
-						</script>'; 
-	            
-
-
-	# code...
+						</script>';
 } else {
 
 
@@ -54,28 +49,15 @@ if (isset($_POST["folioventa"])) {
 
 	             	echo '<script language="javascript">alert("Se ha agregado el abono Satisfactoriamente");
 	             		window.location.href="Resultado_Imprimir.php";
-						</script>'; 
-						
-	             	# code...
+						</script>';
 	             } else {
 
 	             	echo '<script language="javascript">alert("Ocurrio un error");
-						</script>'; 
-	             	# code...
+						</script>';
 	             }
-		# code...
 	}} else {
 
 		 echo "No se ha recibido algun dato";
-		# code...
 	}
-
-	
-	# code...
-
-
-
-
-
 cerrar($Conexion);
 ?>

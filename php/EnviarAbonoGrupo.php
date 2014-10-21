@@ -40,7 +40,7 @@ if($_SESSION['logged'] == 'yes')
 <title>Abono Grupo</title>
 
 <link rel="stylesheet" href="../css/bordesT.css">
-<link href="../bootstrap311/css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="../css/kendo.common.min.css">
 <link rel="stylesheet" href="../css/kendo.default.min.css">
